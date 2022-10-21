@@ -48,11 +48,15 @@ public class FactureServiceImpl implements IFactureService {
 	 * ainsi que les montants d'une facture
 	 */
 	private Facture addDetailsFacture(Facture f, Set<DetailFacture> detailsFacture) {
+		
+		Produit p = new Produit();
+		p.getIdProduit();
+		
 		float montantFacture = 0;
 		float montantRemise = 0;
 		for (DetailFacture detail : detailsFacture) {
 			//Récuperer le produit 
-			Produit produit = produitRepository.findById(detail.getProduit().getIdProduit()).get();
+			Produit produit = produitRepository.findById(((Produit) detail.getProduit()).getIdProduit()).get();
 			//Calculer le montant total pour chaque détail Facture
 			float prixTotalDetail = detail.getQteCommandee() * produit.getPrix();
 			//Calculer le montant remise pour chaque détail Facture
@@ -74,11 +78,11 @@ public class FactureServiceImpl implements IFactureService {
 	@Override
 	public void cancelFacture(Long factureId) {
 		// Méthode 01
-		//Facture facture = factureRepository.findById(factureId).get();
+		// Facture facture = factureRepository.findById(factureId).get();
 		Facture facture = factureRepository.findById(factureId).orElse(new Facture());
 		facture.setArchivee(true);
 		factureRepository.save(facture);
-		//Méthode 02 (Avec JPQL)
+		// Méthode 02 (Avec JPQL)
 		factureRepository.updateFacture(factureId);
 	}
 
