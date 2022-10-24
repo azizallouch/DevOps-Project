@@ -77,6 +77,22 @@ public class StockServiceImplMock {
         assertEquals(stock, StockSer.addStock(stock));
     }
     
+/*
+     Suppression d'un stock selon son ID (PROBLEM FIXED)
+     */
+
+    
+    @Test
+    
+        void deleteStock() {
+    	
+    	Stock stock1 = new Stock(40L,"stock tunis", 12, 5);
+    	  Mockito.when(stockRepository.findById(stock1.getIdStock())).thenReturn(Optional.of(stock1));
+      	StockSer.deleteStock(stock1.getIdStock());
+       Mockito.verify(stockRepository).deleteById(stock1.getIdStock());
+
+   
+       }
     
   
 }
