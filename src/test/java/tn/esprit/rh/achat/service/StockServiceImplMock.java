@@ -65,34 +65,6 @@ public class StockServiceImplMock {
         Assertions.assertNotNull(stock1);
     }
     
-    /*
-    Ajout d'un stock
-    */
-
-    @Test
-    
-    void addStock() {
-		Stock stock = new Stock(10L,"stock binzarrtt", 1, 1);
-        Mockito.when(stockRepository.save(stock)).thenReturn(stock);
-        assertEquals(stock, StockSer.addStock(stock));
-    }
-    
-    /*
-     Suppression d'un stock selon son ID (PROBLEM FIXED)
-     */
-
-    
-    @Test
-    
-        void deleteStock() {
-    	
-    	Stock stock1 = new Stock(40L,"stock tunis", 12, 5);
-    	  Mockito.when(stockRepository.findById(stock1.getIdStock())).thenReturn(Optional.of(stock1));
-      	StockSer.deleteStock(stock1.getIdStock());
-       Mockito.verify(stockRepository).deleteById(stock1.getIdStock());
-
-   
-       }
     
   
 }
