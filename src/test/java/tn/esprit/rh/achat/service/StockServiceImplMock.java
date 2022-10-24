@@ -94,19 +94,5 @@ public class StockServiceImplMock {
    
        }
     
-   
-    
-    /*
-    Récupération du status d'un stock
-    */
-    
-    @Test
-    
-    void retrieveStatusStock() {
-    	
-        Mockito.when(stockRepository.retrieveStatusStock()).thenReturn( List.of(new Stock("stock ariana", 1, 1)));
-        Assertions.assertNotNull(StockSer.retrieveStatusStock());
-
-    }
   
 }
