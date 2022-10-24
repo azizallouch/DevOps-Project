@@ -108,21 +108,5 @@ public class StockServiceImplMock {
         Assertions.assertNotNull(StockSer.retrieveStatusStock());
 
     }
-    
-    /*
-    Récupération de tous les stocks
-    */
-    
-  @Test
-    
-    void retrieveAllStocks() {
-		
-        Mockito.when(stockRepository.findAll()).thenReturn(listStocks);    
-        
-        List<Stock> list = StockSer.retrieveAllStocks();
-        Assertions.assertNotNull(list);
-        
-    }
-
   
 }
