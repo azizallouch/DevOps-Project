@@ -124,24 +124,5 @@ public class StockServiceImplMock {
         
     }
 
-  /*
-  Mettre à jour un stock
-  */
-  
-  
-  @Test
-  
-  void updateStock() {
-	  
-        Mockito.when(stockRepository.findById(stock.getIdStock())).thenReturn(Optional.of(stock));
-        Stock stock1 = StockSer.retrieveStock(stock.getIdStock());
-        stock1.setLibelleStock("loulou");
-        Mockito.when(stockRepository.save(stock1)).thenReturn(stock1);
-        Assertions.assertEquals(stock1.getLibelleStock(), StockSer.updateStock(stock1).getLibelleStock());
-        log.info("la nouvelle valeur est est " + stock1.getLibelleStock());
-        
-
- }
-
   
 }
