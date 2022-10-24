@@ -64,6 +64,19 @@ public class StockServiceImplMock {
         Stock stock1 = StockSer.retrieveStock(1L);
         Assertions.assertNotNull(stock1);
     }
+
+ /*
+    Ajout d'un stock
+    */
+
+    @Test
+    
+    void addStock() {
+		Stock stock = new Stock(10L,"stock binzarrtt", 1, 1);
+        Mockito.when(stockRepository.save(stock)).thenReturn(stock);
+        assertEquals(stock, StockSer.addStock(stock));
+    }
+    
     
   
 }
