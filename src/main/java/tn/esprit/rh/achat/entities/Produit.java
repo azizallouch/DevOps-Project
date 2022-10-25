@@ -49,7 +49,12 @@ public class Produit implements Serializable {
 	private CategorieProduit categorieProduit;
 	
 
-
+	public Produit(String libelleProduit, String codeProduit, float prix) {
+		super();
+		this.libelleProduit = libelleProduit;
+		this.codeProduit = codeProduit;
+		this.prix = prix;
+	}
 	
 
 }
