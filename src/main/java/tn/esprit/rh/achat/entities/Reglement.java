@@ -35,4 +35,11 @@ public class Reglement implements Serializable{
 	@JsonIgnore
 	private Facture facture;
 	
+	public Reglement(Long idReglement, float montantPaye, float montantRestant) {
+		super();
+		this.idReglement = idReglement;
+		this.montantPaye = montantPaye;
+		this.montantRestant = montantRestant;
+	}
+	
 }

@@ -34,7 +34,7 @@ import java.util.stream.Stream;
 //TESTE LE DIMANCHE 23 OCTOBRE A 19H50 : TOUTE LES FONCTIONS MARCHENT
 //
 
-public class StockServiceImplMock {
+public class TestStockMockito {
 
     @Mock(lenient = true)
     StockRepository stockRepository;
