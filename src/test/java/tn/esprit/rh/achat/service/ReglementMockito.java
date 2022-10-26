@@ -89,6 +89,22 @@ public class ReglementMockito {
       Mockito.verify(reglementRepository).save(reglement1);
   }
     
+ /*
+    Récupération d'un stock
+   */
+
+    @Test
+ 
+  
+    void retrieveReglement() {
+    	
+        Mockito.when(reglementRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(reglement));
+        
+        Reglement reglement1 = RegService.retrieveReglement(4L);
+        
+        Assertions.assertNotNull(reglement1);
+    }
+    
 	
 	
 
