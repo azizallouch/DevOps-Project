@@ -105,6 +105,26 @@ public class ReglementMockito {
         Assertions.assertNotNull(reglement1);
     }
     
+/*
+    Récupération du chiffre d'affaire entre deux dates
+    */
+    
+    
+    @Test
+    
+    void getChiffreAffaireEntreDeuxDate() {
+	 
+	  Date startDate = new GregorianCalendar(2022, Calendar.OCTOBER, 20).getTime();
+	  Date endDate = new GregorianCalendar(2022, Calendar.OCTOBER, 27).getTime();
+	 
+        Mockito.when(reglementRepository.getChiffreAffaireEntreDeuxDate(startDate, endDate)).thenReturn( Mockito.anyFloat());
+
+        Assertions.assertEquals(Mockito.anyFloat(),RegService.getChiffreAffaireEntreDeuxDate(startDate, endDate));
+        
+
+
+    }
+    
 	
 	
 
