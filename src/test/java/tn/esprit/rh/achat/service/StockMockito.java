@@ -65,6 +65,66 @@ public class StockMockito {
         Assertions.assertNotNull(stock1);
     }
     
+/*
+    Ajout d'un stock
+    */
+
+    @Test
+    
+    void addStock() {
+		Stock stock = new Stock(10L,"stock binzarrtt", 1, 1);
+        Mockito.when(stockRepository.save(stock)).thenReturn(stock);
+        assertEquals(stock, StockSer.addStock(stock));
+    }
+    
+    /*
+     Suppression d'un stock selon son ID (PROBLEM FIXED)
+     */
+
+    
+    @Test
+    
+        void deleteStock() {
+    	
+    	Stock stock1 = new Stock(40L,"stock tunis", 12, 5);
+    	  Mockito.when(stockRepository.findById(stock1.getIdStock())).thenReturn(Optional.of(stock1));
+      	StockSer.deleteStock(stock1.getIdStock());
+       Mockito.verify(stockRepository).deleteById(stock1.getIdStock());
+
+   
+       }
+    
+   // A PARTIR MEN HOUNI IT NO LONGER WORKS I GUESS
+    
+    /*
+    Récupération du status d'un stock
+    */
+    
+/*
+    @Test
+    
+    void retrieveStatusStock() {
+    	
+        Mockito.when(stockRepository.retrieveStatusStock()).thenReturn( List.of(new Stock("stock ariana", 1, 1)));
+        Assertions.assertNotNull(StockSer.retrieveStatusStock());
+
+    }
+  */
+    
+    /*
+    Récupération de tous les stocks
+    */
+    
+  @Test
+    
+    void retrieveAllStocks() {
+		
+        Mockito.when(stockRepository.findAll()).thenReturn(listStocks);    
+        
+        List<Stock> list = StockSer.retrieveAllStocks();
+        Assertions.assertNotNull(list);
+        
+    }
     
   
 }
