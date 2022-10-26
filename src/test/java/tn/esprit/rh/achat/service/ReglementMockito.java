@@ -88,59 +88,6 @@ public class ReglementMockito {
       
       Mockito.verify(reglementRepository).save(reglement1);
   }
-  
-  
-  
-    /*
-    Récupération d'un stock
-   */
-
-    @Test
- 
-  
-    void retrieveReglement() {
-    	
-        Mockito.when(reglementRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(reglement));
-        
-        Reglement reglement1 = RegService.retrieveReglement(4L);
-        
-        Assertions.assertNotNull(reglement1);
-    }
-    
-
-    /*
-    Récupération d'un reglement selon l'id de la facture
-    */
-    
-    @Test
-    
-    void retrieveReglementByFacture() {
-    	
-        Mockito.when(reglementRepository.retrieveReglementByFacture(Mockito.anyLong())).thenReturn( List.of(new Reglement(4L,5.4f,5.4f)));
-
-        Assertions.assertNotNull(RegService.retrieveReglementByFacture(Mockito.anyLong()).size());
-
-    }
-    
-    /*
-    Récupération du chiffre d'affaire entre deux dates
-    */
-    
-    
-    @Test
-    
-    void getChiffreAffaireEntreDeuxDate() {
-	 
-	  Date startDate = new GregorianCalendar(2022, Calendar.OCTOBER, 20).getTime();
-	  Date endDate = new GregorianCalendar(2022, Calendar.OCTOBER, 27).getTime();
-	 
-        Mockito.when(reglementRepository.getChiffreAffaireEntreDeuxDate(startDate, endDate)).thenReturn( Mockito.anyFloat());
-
-        Assertions.assertEquals(Mockito.anyFloat(),RegService.getChiffreAffaireEntreDeuxDate(startDate, endDate));
-        
-
-
-    }
     
 	
 	
