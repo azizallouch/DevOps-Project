@@ -18,12 +18,15 @@ services:
   spring_boot_project:
   
     image: achat
+
     container_name: achat
-    restart: on-failure
+
     build:
         context: ./
         dockerfile: Dockerfile
+
     ports:
       - 9050:9050
+
     depends_on:
-      - mysqldb
+      - mysqldb_standalone
