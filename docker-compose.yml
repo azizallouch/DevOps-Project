@@ -20,13 +20,16 @@ services:
     image: achat
 
     container_name: achat
+    
+    restart: unless-stopped
+
+    ports:
+      - 9050:9050
+
 
     build:
         context: ./
         dockerfile: Dockerfile
-
-    ports:
-      - 9050:9050
 
     depends_on:
       - mysqldb_standalone
