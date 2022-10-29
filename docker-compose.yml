@@ -10,7 +10,7 @@ services:
     ports:
       - "3306:3306"
 
-  spring_app:
+  spring_boot_project:
     image: achat
     container_name: achat
     restart: on-failure
