@@ -1,8 +1,8 @@
 version: "3.3"
 
 services:
-  mysqldb:
-    container_name: mysqldb
+  mydatabase:
+    container_name: mydatabase
     image: mysql:8
     restart: unless-stopped
     environment:
@@ -17,4 +17,4 @@ services:
     ports:
       - 9090:9090
     depends_on:
-      - mysqldb
+      - mydatabase
