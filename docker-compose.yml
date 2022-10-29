@@ -1,35 +1,20 @@
 version: "3.3"
 
 services:
-
-  mysqldb_standalone:
-  
+  mysqldb:
     container_name: mysqldb
     image: mysql:8
     restart: unless-stopped
     environment:
-    
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: achatdb
-      
     ports:
       - "3306:3306"
 
-  spring_boot_project:
-  
+  spring_app:
     image: achat
-
     container_name: achat
-    
-    restart: unless-stopped
-
+    restart: on-failure
     ports:
-      - 9050:9050
-
-
-    build:
-        context: ./
-        dockerfile: Dockerfile
-
+      - 9090:9090
     depends_on:
-      - mysqldb_standalone
+      - mysqldb
