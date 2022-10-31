@@ -13,7 +13,7 @@ services:
  app:
     depends_on:
       - mysqldb
-    image: selimsaidi1/achat:1.0.0
+    image: selimsaidi/achat:1.0.0
     container_name: projetachat
     restart: on-failure
     ports:
