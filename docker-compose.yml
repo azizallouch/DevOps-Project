@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  mysqldb:
+ mysqldb:
     image: mysql:5.7
     restart: unless-stopped
     environment:
@@ -9,9 +9,8 @@ services:
       - MYSQL_DATABASE=achatdb
     ports:
       - "3306:3306"
-    volumes:
-      - db:/var/lib/mysql
-  app:
+    
+ app:
     depends_on:
       - mysqldb
     image: emnaketata/achat:1.0.0
@@ -26,5 +25,3 @@ services:
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
-    volumes:
-      - .m2:/root/.m2
