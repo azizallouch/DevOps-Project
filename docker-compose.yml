@@ -1,5 +1,4 @@
 version: "3.3"
-
 services:
   mysqldb:
     container_name: mysqldb
@@ -11,7 +10,6 @@ services:
       - "3306:3306"
     volumes:
     - /home/mysql/data:/var/lib/mysql
-
   spring_boot_project:
     image: azizallouche/achat
     container_name: achat
@@ -20,7 +18,7 @@ services:
       - 9090:9090
     depends_on:
       - mysqldb
-achatfront:
+  achatfront:
     image: azizallouche/achatfront
     container_name: achatfront
     expose:
@@ -32,5 +30,4 @@ achatfront:
     ports:
       - 4200:4200
     restart: on-failure
-
     command: "ng serve --open --host 192.168.1.9 --port 4200 --disable-host-check"
