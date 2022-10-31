@@ -2,11 +2,12 @@ version: "3"
 
 services:
  mysqldb:
+    container_name: mysqldb
     image: mysql:5.7
     restart: unless-stopped
     environment:
-
       - MYSQL_DATABASE=achatdb
+      - MYSQL_ALLOW_EMPTY_PASSWORD= yes
     ports:
       - "3306:3306"
     volumes:
