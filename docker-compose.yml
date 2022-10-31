@@ -11,7 +11,7 @@ services:
       - "3306:3306"
 
   spring_boot_project:
-    image: azizallouche:1.0.0/achat
+    image: azizallouche/achat
     container_name: achat
     restart: on-failure
     ports:
