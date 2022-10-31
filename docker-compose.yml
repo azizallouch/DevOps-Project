@@ -20,3 +20,17 @@ services:
       - 9090:9090
     depends_on:
       - mysqldb
+achatfront:
+    image: azizallouche/achatfront
+    container_name: achatfront
+    expose:
+      - 4200
+    links:
+      - spring_boot_project
+    depends_on:
+      - spring_boot_project
+    ports:
+      - 4200:4200
+    restart: on-failure
+
+    command: "ng serve --open --host 192.168.1.9 --port 4200 --disable-host-check"
