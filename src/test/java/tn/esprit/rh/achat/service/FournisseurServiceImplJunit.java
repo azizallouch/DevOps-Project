@@ -16,7 +16,7 @@ import java.util.List;
 
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
-public class FournisseurServiceImplTest {
+public class FournisseurServiceImplJunit {
 	@Autowired
 	IFournisseurService fs;
 	
