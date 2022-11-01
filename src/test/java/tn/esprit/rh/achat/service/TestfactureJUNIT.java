@@ -35,8 +35,8 @@ import static org.junit.jupiter.api.Assertions.*;
     @Test
     public Facture retrieveFacture() {
     	Facture f= new Facture(770L,8.5f,9.6f);
-        Fa.retrieveFacture(f.getIdFacture());
-        return f;
+        
+        return  Fa.retrieveFacture(f.getIdFacture());
     }
 
    

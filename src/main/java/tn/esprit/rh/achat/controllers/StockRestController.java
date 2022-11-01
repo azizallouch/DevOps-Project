@@ -39,7 +39,7 @@ public class StockRestController {
 		return stockService.addStock(s);
 	}
 
-	// http://localhost:8089/SpringMVC/stock/remove-stock/{stock-id}
+	
 	@DeleteMapping("/remove-stock/{stock-id}")
 	@ResponseBody
 	public void removeStock(@PathVariable("stock-id") Long stockId) {
@@ -65,7 +65,7 @@ public class StockRestController {
 	//@Scheduled(cron = "*/60 * * * * *")
 	//@GetMapping("/retrieveStatusStock")
 //	@ResponseBody
-//	public void retrieveStatusStock() {
+
 //		stockService.retrieveStatusStock();
 //	}
 
