@@ -15,7 +15,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: yosrjrah/achat
+    image: yosrjrah/achats
     container_name: projetachat
     restart: on-failure
     ports:
