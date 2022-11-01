@@ -1,4 +1,5 @@
 FROM openjdk:8-jdk-alpine
 EXPOSE 8089
-ADD target/achat-1.0.jar achat-1.0.jar
+FROM alpine/curl
+ADD http://192.168.1.201:8081/repository/maven-releases/tn/esprit/rh/achat-1.0.jar achat-1.0.jar
 ENTRYPOINT ["java","-jaar","/achat-1.0.jar"]
