@@ -1,4 +1,4 @@
-version: "3"
+version: "3.3"
 
 services:
   mysqldb:
@@ -9,9 +9,7 @@ services:
       - MYSQL_DATABASE='achatdb'
     ports:
       - "3306:3306"
-    volumes:
-      - db:/var/lib/mysql
-
+    
   app:
     depends_on:
       - mysqldb
@@ -27,8 +25,7 @@ services:
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
         "spring.jpa.hibernate.ddl-auto" : "update"
       }'
-    volumes:
-      - .m2:/root/.m2
+   
       
     
   
