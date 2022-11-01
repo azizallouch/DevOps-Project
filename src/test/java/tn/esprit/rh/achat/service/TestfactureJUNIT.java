@@ -19,22 +19,24 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(classes = AchatApplication.class)
 @TestMethodOrder(OrderAnnotation.class)
- public class testfactureJUNIT {
+ public class TestfactureJUNIT {
 
     @Autowired
     IFactureService Fa;
 
     @Test
     @Order(1)
-    void retrieveAllFactures() {
+    public List<Facture> retrieveAllFactures() {
         List<Facture> listUsers =Fa.retrieveAllFactures();
         assertEquals(0, listUsers.size());
+        return listUsers;
     }
   
     @Test
-    void retrieveFacture() {
+    public Facture retrieveFacture() {
     	Facture f= new Facture(770L,8.5f,9.6f);
         Fa.retrieveFacture(f.getIdFacture());
+        return f;
     }
 
    

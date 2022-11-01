@@ -3,6 +3,7 @@ package tn.esprit.rh.achat.service;
 
 
 import lombok.extern.slf4j.Slf4j;
+
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,7 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import static org.mockito.Mockito.*;
 
 import tn.esprit.rh.achat.entities.Facture;
@@ -32,7 +33,7 @@ import tn.esprit.rh.achat.services.FactureServiceImpl;
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest
 @Slf4j
-public class testfactureMockito {
+public class TestfactureMockito {
 	@Mock
 	FactureRepository facturerepo;
 
@@ -41,7 +42,7 @@ public class testfactureMockito {
     //Fournisseur f=Fournisseur.builder().idFournisseur(1L).code("123").libelle("test1")
          //   .categorieFournisseur(null).detailFournisseur(null).factures(null)
           //  .secteurActivites(null).build();
-    @Test
+    /*@Test
     public void retrieveFacture(){
         Facture f = new Facture(1L,233,11,null,null,true,null,null,null);
 
@@ -49,18 +50,19 @@ public class testfactureMockito {
         Facture Facture= factureService.retrieveFacture((long) 1);
         Assertions.assertNotNull(Facture);
         log.info("get ==>"+ Facture.toString());
-    }
+    }*/
     @Test
-    public void addFacture(){
+    public Facture addFacture(){
     	Facture f = new Facture(2L,233,11,null,null,true,null,null,null);
         f.setIdFacture(2L);
         factureService.addFacture(f);
         verify(facturerepo, times(1)).save(f);
         System.out.println(f);
         log.info("add ==>"+ f.toString());
+        return f;
     }
 
-    @Test
+  /*  @Test
     public void retrieveAllFactures()
     {
         List<Facture> Lf = new ArrayList<Facture>() {
@@ -78,7 +80,7 @@ public class testfactureMockito {
         assertEquals(3, factureList.size());
         log.info("retrieve all ==>"+ factureList.toString());
 
-    }
+    }*/
 
     @Test
     public void cancelFacture() {

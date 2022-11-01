@@ -16,6 +16,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import tn.esprit.achat.dto.DtoFacture;
 
 @Entity
 @Getter
@@ -49,6 +50,14 @@ public class Facture implements Serializable {
 		this.montantRemise = montantRemise;
 		this.montantFacture = montantFacture;
 		
+	}
+	public Facture(DtoFacture f) {
+		this.montantFacture=f.getMontantFacture();
+		this.montantRemise=f.getMontantRemise();
+		this.archivee=f.getArchivee();
+		this.dateCreationFacture=f.getDateCreationFacture();
+		this.dateDerniereModificationFacture=f.getDateDerniereModificationFacture();
+			
 	}
 
 	
