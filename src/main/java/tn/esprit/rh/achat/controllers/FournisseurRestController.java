@@ -33,6 +33,7 @@ public class FournisseurRestController {
 	}
 
 	// http://localhost:8089/SpringMVC/fournisseur/add-fournisseur
+
 	@PostMapping("/add-fournisseur")
 	@ResponseBody
 	public Fournisseur addFournisseur(@RequestBody Fournisseur f) {
