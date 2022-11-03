@@ -12,7 +12,7 @@ services:
       - "3306:3306"
 
   spring_app:
-    image: dhaferharbaoui/achat
+    image: dhaferharbaoui/achat:1.0.0
     container_name: achat
     restart: on-failure
     ports:
