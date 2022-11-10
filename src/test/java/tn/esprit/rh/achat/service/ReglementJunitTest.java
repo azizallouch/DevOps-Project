@@ -69,9 +69,8 @@ public class ReglementJunitTest {
 
 	@Test
 	  void getChiffreAffaireEntreDeuxDate() {
-		  
-		  Date startDate = new GregorianCalendar(2022, Calendar.OCTOBER, 20).getTime();
-		  Date endDate = new GregorianCalendar(2022, Calendar.OCTOBER, 27).getTime();
+		  Date startDate = new GregorianCalendar(2022, Calendar.NOVEMBER, 1).getTime();
+		  Date endDate = new GregorianCalendar(2022, Calendar.NOVEMBER, 30).getTime();
 		  
 		  regServ.getChiffreAffaireEntreDeuxDate(startDate,endDate);
 	  }
