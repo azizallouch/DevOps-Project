@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(OrderAnnotation.class)
 
 
-public class StockJunit {
+public class StockJunitTest {
 
   @Autowired
   IStockService St;

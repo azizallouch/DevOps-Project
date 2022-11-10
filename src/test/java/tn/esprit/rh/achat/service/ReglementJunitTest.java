@@ -23,7 +23,7 @@ import tn.esprit.rh.achat.services.IReglementService;
 @SpringBootTest(classes = AchatApplication.class)
 @TestMethodOrder(OrderAnnotation.class)
 
-public class ReglementJunit {
+public class ReglementJunitTest {
 	
 	
 	@Autowired
