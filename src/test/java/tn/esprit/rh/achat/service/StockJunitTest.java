@@ -71,10 +71,10 @@ void updateStock() {
   
 
 
-  @Test
-  @Order(6)
-  void deleteStock() {
-      St.deleteStock(4L);
-  }
+//  @Test
+//  @Order(6)
+//  void deleteStock() {
+//      St.deleteStock(4L);
+//  }
 
 }
