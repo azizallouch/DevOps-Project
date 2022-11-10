@@ -31,5 +31,15 @@ services:
       }'
     volumes:
       - .m2:/root/.m2
+
+  achatfront:
+      image: azizallouche/achatfront:1.0.0
+      container_name: achatfront
+      links:
+        - app
+      depends_on:
+        - app
+      ports:
+        - 4200:80
 volumes:
   db:
