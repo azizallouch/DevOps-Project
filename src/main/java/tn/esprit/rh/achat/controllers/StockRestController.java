@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.Stock;
 import tn.esprit.rh.achat.services.IStockService;
-
+import org.springframework.scheduling.annotation.Scheduled;
 import java.util.List;
 
 @RestController
@@ -60,13 +60,13 @@ public class StockRestController {
 	 * sans retour (void)
 	 */
 	// http://localhost:8089/SpringMVC/stock/retrieveStatusStock
-	// @Scheduled(fixedRate = 60000)
-	// @Scheduled(fixedDelay = 60000)
-	//@Scheduled(cron = "*/60 * * * * *")
-	//@GetMapping("/retrieveStatusStock")
-//	@ResponseBody
-//	public void retrieveStatusStock() {
-//		stockService.retrieveStatusStock();
-//	}
+	@Scheduled(fixedRate = 60000)
+	 @Scheduled(fixedDelay = 60000)
+	@Scheduled(cron = "*/60 * * * * *")
+	@GetMapping("/retrieveStatusStock")
+	@ResponseBody
+	public void retrieveStatusStock() {
+		stockService.retrieveStatusStock();
+	}
 
 }

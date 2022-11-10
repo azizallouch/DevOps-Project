@@ -41,5 +41,12 @@ public class Reglement implements Serializable{
 		this.montantPaye = montantPaye;
 		this.montantRestant = montantRestant;
 	}
+
+	public Reglement(float montantPaye, float montantRestant) {
+		// TODO Auto-generated constructor stub
+
+		this.montantPaye = montantPaye;
+		this.montantRestant = montantRestant;
+	}
 	
 }
