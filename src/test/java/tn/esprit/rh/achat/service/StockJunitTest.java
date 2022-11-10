@@ -32,7 +32,7 @@ public class StockJunitTest {
   
   void addStock() {
       Stock s1 = new Stock();
-      s1.setLibelleStock("stock test");
+      s1.setLibelleStock("added via jenkins");
       s1.setQte(10);
       s1.setQteMin(100);
       Stock savedStock1= St.addStock(s1);
@@ -40,6 +40,7 @@ public class StockJunitTest {
   }
 
   @Test
+  @Order(2)
   void retrieveAllStocks() {
       List<Stock> listStocks = St.retrieveAllStocks();
       Assertions.assertNotNull(listStocks);
@@ -47,27 +48,33 @@ public class StockJunitTest {
 
 
 @Test
+@Order(3)
 void updateStock() {
-    Stock s1= St.retrieveStock(19L);
+    Stock s1= St.retrieveStock(3L);
     s1.setQte(50);
     Stock updatedStock1= St.updateStock(s1);
     assertEquals(s1.getQte(), updatedStock1.getQte());
 }
 
-  @Test
-  void deleteStock() {
-      St.deleteStock(18L);
-  }
-
   
   @Test
+  @Order(4)
   void retrieveStock() {
-      St.retrieveStock(1L);
+      St.retrieveStock(3L);
   }
 
   @Test
+  @Order(5)
   void retrieveStatusStock() {
       St.retrieveStatusStock();
+  }
+  
+
+
+  @Test
+  @Order(6)
+  void deleteStock() {
+      St.deleteStock(4L);
   }
 
 }
