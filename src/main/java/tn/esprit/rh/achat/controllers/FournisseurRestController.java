@@ -3,6 +3,8 @@ package tn.esprit.rh.achat.controllers;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import tn.esprit.achat.dto.DtoFournisseur;
 import tn.esprit.rh.achat.entities.Fournisseur;
 import tn.esprit.rh.achat.services.IFournisseurService;
 
@@ -36,9 +38,9 @@ public class FournisseurRestController {
 
 	@PostMapping("/add-fournisseur")
 	@ResponseBody
-	public Fournisseur addFournisseur(@RequestBody Fournisseur f) {
-		
-		return fournisseurService.addFournisseur(f);
+	public Fournisseur addFournisseur(@RequestBody DtoFournisseur f) {
+		Fournisseur fournisseur=new Fournisseur(f);
+		return fournisseurService.addFournisseur(fournisseur);
 	}
 
 	
@@ -51,7 +53,8 @@ public class FournisseurRestController {
 	// http://localhost:8089/SpringMVC/fournisseur/modify-fournisseur
 	@PutMapping("/modify-fournisseur")
 	@ResponseBody
-	public Fournisseur modifyFournisseur(@RequestBody Fournisseur fournisseur) {
+	public Fournisseur modifyFournisseur(@RequestBody DtoFournisseur f) {
+		Fournisseur fournisseur=new Fournisseur(f);
 		return fournisseurService.updateFournisseur(fournisseur);
 	}
 
