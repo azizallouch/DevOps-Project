@@ -21,9 +21,9 @@ import tn.esprit.achat.dto.DtoCategorieproduit;
 @NoArgsConstructor
 public class CategorieProduit implements Serializable {
 
-	public CategorieProduit(DtoCategorieproduit p) {
-		this.codeCategorie=p.getCodeCategorie();
-		this.libelleCategorie=p.getLibelleCategorie();
+	public CategorieProduit(DtoCategorieproduit cp) {
+		this.codeCategorie=cp.getCodeCategorie();
+		this.libelleCategorie=cp.getLibelleCategorie();
 	}
 	/**
 	 * 

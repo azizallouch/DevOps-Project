@@ -57,7 +57,7 @@ public class TestfactureMockito {
 
         Mockito.when(facturerepo.findById(1L)).thenReturn(Optional.of(f));
         Facture Facture= factureService.retrieveFacture((long) 1);
-        Assertions.assertThatObject(Facture).isEqualTo(Facture);
+        Assertions.assertThatObject(f).isEqualTo(Facture);
         log.info("get ==>"+ Facture.toString());
     }
     

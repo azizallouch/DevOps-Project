@@ -36,9 +36,9 @@ public class CategorieProduitController {
 	// http://localhost:8089/SpringMVC/categorieProduit/add-categorieProduit
 	@PostMapping("/add-categorieProduit")
 	@ResponseBody
-	public CategorieProduit addCategorieProduit(@RequestBody DtoCategorieproduit p) {
-		 CategorieProduit cp=new CategorieProduit(p);
-		return categorieProduitService.addCategorieProduit(cp);
+	public CategorieProduit addCategorieProduit(@RequestBody DtoCategorieproduit cp) {
+		 CategorieProduit categorieproduit=new CategorieProduit(cp);
+		return categorieProduitService.addCategorieProduit(categorieproduit);
 	}
 
 	

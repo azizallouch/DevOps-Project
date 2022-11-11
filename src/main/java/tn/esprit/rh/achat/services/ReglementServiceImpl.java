@@ -36,9 +36,9 @@ public class ReglementServiceImpl implements IReglementService {
 	public List<Reglement> retrieveReglementByFacture(Long idFacture) {	
 		return reglementRepository.retrieveReglementByFacture(idFacture);
 		
-//		ou bien(Sans JPQL)
 
-//		return (List<Reglement>) f.getReglements();
+
+
 	}
 
 	@Override
