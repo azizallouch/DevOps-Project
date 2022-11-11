@@ -3,6 +3,9 @@ package tn.esprit.rh.achat.controllers;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import tn.esprit.achat.dto.DtoSecteurActivite;
+import tn.esprit.rh.achat.entities.CategorieProduit;
 import tn.esprit.rh.achat.entities.SecteurActivite;
 import tn.esprit.rh.achat.services.ISecteurActiviteService;
 
@@ -34,8 +37,9 @@ public class SecteurActiviteController {
 	// http://localhost:8089/SpringMVC/secteurActivite/add-secteurActivite
 	@PostMapping("/add-secteurActivite")
 	@ResponseBody
-	public SecteurActivite addSecteurActivite(@RequestBody SecteurActivite sa) {
-		return secteurActiviteService.addSecteurActivite(sa);
+	public SecteurActivite addSecteurActivite(@RequestBody DtoSecteurActivite sa) {
+		SecteurActivite secteurActivite=new SecteurActivite(sa);
+		return secteurActiviteService.addSecteurActivite(secteurActivite);
 	}
 
 	
@@ -48,7 +52,8 @@ public class SecteurActiviteController {
 	// http://localhost:8089/SpringMVC/secteurActivite/modify-secteurActivite
 	@PutMapping("/modify-secteurActivite")
 	@ResponseBody
-	public SecteurActivite modifySecteurActivite(@RequestBody SecteurActivite secteurActivite) {
+	public SecteurActivite modifySecteurActivite(@RequestBody DtoSecteurActivite sa) {
+		SecteurActivite secteurActivite=new SecteurActivite(sa);
 		return secteurActiviteService.updateSecteurActivite(secteurActivite);
 	}
 

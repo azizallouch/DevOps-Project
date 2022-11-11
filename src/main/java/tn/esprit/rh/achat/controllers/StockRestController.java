@@ -4,6 +4,8 @@ package tn.esprit.rh.achat.controllers;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import tn.esprit.achat.dto.DtoStock;
 import tn.esprit.rh.achat.entities.Stock;
 import tn.esprit.rh.achat.services.IStockService;
 
@@ -35,8 +37,9 @@ public class StockRestController {
 	// http://localhost:8089/SpringMVC/stock/add-stock
 	@PostMapping("/add-stock")
 	@ResponseBody
-	public Stock addStock(@RequestBody Stock s) {
-		return stockService.addStock(s);
+	public Stock addStock(@RequestBody DtoStock s) {
+		Stock stock=new Stock(s);
+		return stockService.addStock(stock);
 	}
 
 	
@@ -49,7 +52,8 @@ public class StockRestController {
 	// http://localhost:8089/SpringMVC/stock/modify-stock
 	@PutMapping("/modify-stock")
 	@ResponseBody
-	public Stock modifyStock(@RequestBody Stock stock) {
+	public Stock modifyStock(@RequestBody DtoStock s) {
+		Stock stock=new Stock(s);
 		return stockService.updateStock(stock);
 	}
 
@@ -66,7 +70,7 @@ public class StockRestController {
 	//@GetMapping("/retrieveStatusStock")
 //	@ResponseBody
 
-//		stockService.retrieveStatusStock();
-//	}
+
+
 
 }

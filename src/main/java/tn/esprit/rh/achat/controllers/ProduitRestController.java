@@ -52,7 +52,7 @@ public class ProduitRestController {
 		produitService.deleteProduit(produitId);
 	}
 
-	// http://localhost:8089/SpringMVC/produit/modify-produit/{idCategorieProduit}/{idStock}
+	
 	@PutMapping("/modify-produit")
 	@ResponseBody
 	public Produit modifyProduit(@RequestBody DtoProduit p) {
@@ -74,7 +74,7 @@ public class ProduitRestController {
 	 * Revenu Brut d'un produit (qte * prix unitaire de toutes les lignes du
 	 * detailFacture du produit envoyé en paramètre )
 	 */
-	// http://localhost:8089/SpringMVC/produit/getRevenuBrutProduit/1/{startDate}/{endDate}
+
 /*	@GetMapping(value = "/getRevenuBrutProduit/{idProduit}/{startDate}/{endDate}")
 	public float getRevenuBrutProduit(@PathVariable("idProduit") Long idProduit,
 			@PathVariable(name = "startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date startDate,
