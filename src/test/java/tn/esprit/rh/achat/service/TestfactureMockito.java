@@ -40,16 +40,7 @@ public class TestfactureMockito {
 
    @InjectMocks
    FactureServiceImpl factureService;
-    //Fournisseur f=Fournisseur.builder().idFournisseur(1L).code("123").libelle("test1")
-         //   .categorieFournisseur(null).detailFournisseur(null).factures(null)
-          //  .secteurActivites(null).build();
    
-    	 
-  /*  	Facture f = new Facture(2L,233,11,null,null,true,null,null,null);
-     factureService.addFacture(f);
-        
-        Mockito.when(facturerepo.findById(2L))
-        Assertions.assertThat(factureService.retrieveFacture(2L)).isEqualTo(f);*/
     
     @Test
     public void retrieveFacture(){
@@ -106,13 +97,6 @@ public class TestfactureMockito {
 	
 
     }
-   /*@Test
-   /*
-    public void  pourcentageRecouvrement()
-    {
-       
-	   factureService.pourcentageRecouvrement(Date(10-12-1998),Date(12-12-2010));
-    }
-*/
+  
 }
 
