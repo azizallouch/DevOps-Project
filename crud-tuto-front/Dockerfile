@@ -1,14 +1,15 @@
-# Build Stage
-FROM node:12.2.0-alpine AS build
-WORKDIR /app
-COPY package*.json /app/
-RUN npm install 
-COPY ./ /app/
-RUN node_modules/.bin/ng build --output-path=dist --prod=true
+FROM node:16.17-alpine3.15  as build
+WORKDIR /usr/local/app
+
+COPY ./ /usr/local/app/
+
+RUN npm install --force
+
+RUN npm run build
 
 
+FROM nginx:latest
+# Copy the build output to replace the default nginx contents.
+COPY --from=build /usr/local/app/dist/crudtuto-Front /usr/share/nginx/html
 
-# Run Stage
-FROM nginx:1.17.1-alpine
-COPY default.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
