@@ -12,8 +12,6 @@ services:
       - "3306:3306"
     volumes:
       - db:/var/lib/mysql
-      
-    
  app:
     depends_on:
       - mysqldb
@@ -31,8 +29,7 @@ services:
       }'
     volumes:
       - .m2:/root/.m2
-
-  achatfront:
+ achatfront:
       image: azizallouche/achatfront:1.0.0
       container_name: achatfront
       links:
