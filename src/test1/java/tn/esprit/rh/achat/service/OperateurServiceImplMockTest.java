@@ -18,7 +18,7 @@ import java.util.Optional;
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 
-public class OperateurServiceImplMock {
+public class OperateurServiceImplMockTest {
 	@Mock
     OperateurRepository operateurRepository;
    
