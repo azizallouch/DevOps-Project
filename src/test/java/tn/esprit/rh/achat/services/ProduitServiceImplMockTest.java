@@ -30,7 +30,7 @@ import java.util.Optional;
 @SpringBootTest(classes=AchatApplication.class)
 @ExtendWith(MockitoExtension.class)
 
-public class ProduitServiceImplMock {
+public class ProduitServiceImplMockTest {
 
     @Mock
     ProduitRepository produitRepository;
