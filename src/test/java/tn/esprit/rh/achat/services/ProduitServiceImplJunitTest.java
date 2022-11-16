@@ -24,7 +24,7 @@ IProduitService ps;
 @Order(1)
 public void testRetrieveAllProduits() {
 List<Produit> listProduits = ps.retrieveAllProduits();
-Assertions.assertEquals(0, listProduits.size());
+Assertions.assertNotNull(listProduits);
 }
 
 
