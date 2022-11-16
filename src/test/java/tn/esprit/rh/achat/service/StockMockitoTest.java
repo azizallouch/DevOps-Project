@@ -54,7 +54,7 @@ public class StockMockitoTest {
 
     void retrieveStock() {
         Mockito.when(stockRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(stock));
-        Stock stock1 = StockSer.retrieveStock(0L);
+        Stock stock1 = StockSer.retrieveStock(7L);
         Assertions.assertNotNull(stock1);
     }
 
