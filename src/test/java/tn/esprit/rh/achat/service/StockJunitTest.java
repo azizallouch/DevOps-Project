@@ -50,7 +50,7 @@ public class StockJunitTest {
 @Test
 @Order(3)
 void updateStock() {
-    Stock s1= St.retrieveStock(3L);
+    Stock s1= St.retrieveStock(7L);
     s1.setQte(50);
     Stock updatedStock1= St.updateStock(s1);
     assertEquals(s1.getQte(), updatedStock1.getQte());
@@ -60,7 +60,7 @@ void updateStock() {
   @Test
   @Order(4)
   void retrieveStock() {
-      St.retrieveStock(3L);
+      St.retrieveStock(7L);
   }
 
   @Test
