@@ -36,7 +36,7 @@ public class SecteurActiviteMockito {
    // @Test
 
    // void retreiveSecteurActivite() {
-     //   Mockito.when(SecteurActiviteRepository.findby(Mockito.anyLong())).thenReturn(Optional.of(stock));
+     //   Mockito.when(SecteurActiviteRepository.findby(Mockito.anyLong())).thenReturn(Optional.of(SecteurActivite));
       //  Stock stock1 = StockSer.retrieveStock(1L);
     //    Assertions.assertNotNull(stock1);
   //  }
